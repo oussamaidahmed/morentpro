@@ -1,7 +1,12 @@
+import AdsCard from '@/Components/ui/AdsCard'
 import React from 'react'
 
 export default function page() {
   return (
-    <div>page</div>
+    <div>
+      <div>
+        <AdsCard />
+      </div>
+    </div>
   )
 }
