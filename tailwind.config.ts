@@ -17,6 +17,6 @@ export default {
     },
   },
   plugins: [
-    require('daisyui'),
+    daisyui,
   ],
 } satisfies Config;
