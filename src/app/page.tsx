@@ -1,5 +1,6 @@
-import AdsCard from '@/Components/ui/AdsCard'
-import React from 'react'
+import AdsCard from "@/Components/ui/AdsCard";
+import Cars from "@/Components/ui/Cars";
+import React from "react";
 
 export default function page() {
   return (
@@ -7,6 +8,9 @@ export default function page() {
       <div>
         <AdsCard />
       </div>
+      <div>
+        <Cars />
+      </div>
     </div>
-  )
+  );
 }
