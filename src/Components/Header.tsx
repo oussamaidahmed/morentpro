@@ -11,7 +11,7 @@ import {
 
 export default function Header() {
   return (
-    <div className="flex max-sm:flex-wrap max-sm:justify-between justify-around items-center p-2 gap-4 ">
+    <div className="flex bg-white max-sm:flex-wrap max-sm:justify-between justify-around items-center p-1 my-2 gap-4 ">
       {/* Logo */}
       <div>
         <Link href="/">
@@ -23,7 +23,7 @@ export default function Header() {
       {/* Searchbar */}
       <form
         action="action"
-        className="flex p-2  text-zinc-500 w-[445px]  max-h-[40px] rounded-full items-center border-2 shadow-xl justify-around max-sm:order-last max-sm:w-full "
+        className="flex p-1  text-zinc-500 w-[445px]  max-h-[40px] rounded-full items-center border-2 shadow-xl justify-around max-sm:order-last max-sm:w-full "
       >
         <span>
           <Search />
@@ -40,16 +40,16 @@ export default function Header() {
 
       <div className=" sm:order-2">
         <ul className="flex gap-4 items-center   ">
-          <li className="hover:scale-110 hidden lg:flex duration-300 rounded-full p-2 border-2">
+          <li className="hover:scale-125 hidden lg:flex duration-300 rounded-full  p-1.5  border-2">
             <Heart />
           </li>
-          <li className="hover:scale-110 hidden lg:flex duration-300 rounded-full p-2 border-2">
+          <li className="hover:scale-125 hidden lg:flex duration-300 rounded-full  p-1.5 border-2">
             <Bell />
           </li>
-          <li className="hover:scale-110 hidden lg:flex duration-300 rounded-full p-2 border-2">
+          <li className="hover:scale-125 hidden lg:flex duration-300 rounded-full  p-1.5  border-2">
             <Settings />
           </li>
-          <li className="flex   hover:scale-110 duration-300  rounded-full p-2 border-2 ">
+          <li className="flex   hover:scale-125 duration-300  rounded-full p-1.5 border-2 ">
             <CircleUser />
           </li>
         </ul>
