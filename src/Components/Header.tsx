@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import {
   Bell,
   CircleUser,
@@ -13,9 +14,11 @@ export default function Header() {
     <div className="flex max-sm:flex-wrap max-sm:justify-between justify-around items-center p-2 gap-4 ">
       {/* Logo */}
       <div>
-        <p className="tracking-tighter text-2xl font-bold text-[#3563E9]  ">
-          MORENT
-        </p>
+        <Link href="/">
+          <p className="tracking-tighter text-2xl font-bold text-[#3563E9]  ">
+            MORENT
+          </p>
+        </Link>
       </div>
       {/* Searchbar */}
       <form
@@ -29,7 +32,6 @@ export default function Header() {
           className=" outline-none flex-1 mx-2 rounded-md p-1 placeholder:text-zinc-500"
           type="text"
           placeholder="Search something here"
-
         />
         <span>
           <SlidersHorizontal />
