@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+
 import {
   Bell,
   CircleUser,
@@ -8,22 +9,27 @@ import {
   Settings,
   SlidersHorizontal,
 } from "lucide-react";
+import MenuButton from "./MenuButton";
 
 export default function Header() {
   return (
     <div className="flex bg-white max-sm:flex-wrap max-sm:justify-between justify-around items-center p-1 my-2 gap-4 ">
       {/* Logo */}
       <div>
-        <Link href="/">
+        <MenuButton />
+      </div>
+      <div>
+        <Link href="/Home">
           <p className="tracking-tighter text-2xl font-bold text-[#3563E9]  ">
             MORENT
           </p>
         </Link>
       </div>
+
       {/* Searchbar */}
       <form
         action="action"
-        className="flex p-1  text-zinc-500 w-[445px]  max-h-[40px] rounded-full items-center border-2 shadow-xl justify-around max-sm:order-last max-sm:w-full "
+        className="flex p-1.5  text-zinc-500 w-[445px]  max-h-[40px] rounded-full items-center border-2 shadow-xl justify-around max-sm:order-last max-sm:w-full "
       >
         <span>
           <Search />

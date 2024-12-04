@@ -21,6 +21,7 @@ export const Cars = [
     liters: "70",
     mode: "automatic",
     people: "2",
+
   },
   {
     id: 2,
@@ -87,7 +88,6 @@ export const Cars = [
     liters: "100",
     mode: "automatic",
     people: "6",
-    
   },
   {
     id: 8,
@@ -111,4 +111,6 @@ export const Cars = [
     mode: "automatic",
     people: "2",
   },
+
 ];
+
