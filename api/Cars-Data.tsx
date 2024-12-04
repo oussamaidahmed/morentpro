@@ -87,6 +87,7 @@ export const Cars = [
     liters: "100",
     mode: "automatic",
     people: "6",
+    
   },
   {
     id: 8,

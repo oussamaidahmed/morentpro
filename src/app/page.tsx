@@ -1,5 +1,6 @@
 import AdsCard from "@/Components/ui/(CarsDisplay)/AdsCard";
 import { PopularCar, RecommendedCar } from "@/Components/ui/(CarsDisplay)/Cars";
+import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import React from "react";
 
@@ -12,7 +13,10 @@ export default function page() {
       <div className=" pt-10 space-y-10">
         <div className="flex justify-between ">
           <h1 className="text-lg text-[#90A3BF]">Popular Car</h1>
-          <Link href={"/CategoryCar"} className="text-[#3563E9] underline text-lg">
+          <Link
+            href={"/CategoryCar"}
+            className="text-[#3563E9] underline text-lg"
+          >
             See All
           </Link>
         </div>
@@ -21,6 +25,13 @@ export default function page() {
       <div className=" pt-10 space-y-10">
         <h1 className="text-lg  text-[#90A3BF]">Recommended Car</h1>
         <RecommendedCar limit={8} />
+      </div>
+      <div className="flex justify-center p-10">
+        <Link href={"/CategoryCar"}>
+          <Button className=" text-white font-semibold px-8 py-3 bg-[#3563E9] rounded-lg">
+            Show more car
+          </Button>
+        </Link>
       </div>
     </div>
   );

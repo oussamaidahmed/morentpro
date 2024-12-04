@@ -21,7 +21,7 @@ interface CarCardProps {
 }
 export default function CarCard({ car }: CarCardProps) {
   return (
-    <div className=" max-sm:w-[260px] max-sm:h-[320px] h-[360px] w-[304px]   px-4 flex flex-col justify-around p-3 rounded-md ring-1  hover:scale-105 duration-100 hover:shadow-2xl ">
+    <div className=" max-sm:w-[260px] max-sm:h-[320px] h-[360px] w-[304px]   px-4 flex flex-col justify-around p-3 rounded-md ring-1  hover:scale-105 duration-100 hover:shadow-2xl  ">
       {/* Name and Like */}
 
       <div className="flex justify-between">

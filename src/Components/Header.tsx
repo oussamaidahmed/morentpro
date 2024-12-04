@@ -41,7 +41,9 @@ export default function Header() {
       <div className=" sm:order-2">
         <ul className="flex gap-4 items-center   ">
           <li className="hover:scale-125 hidden lg:flex duration-300 rounded-full  p-1.5  border-2">
-            <Heart />
+            <Link href={"/LikedPage"}>
+              <Heart />
+            </Link>
           </li>
           <li className="hover:scale-125 hidden lg:flex duration-300 rounded-full  p-1.5 border-2">
             <Bell />

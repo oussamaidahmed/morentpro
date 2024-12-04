@@ -6,8 +6,8 @@ export function PopularCar({ limit }: { limit: number }) {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <div className=" ">
-        <ul className="flex gap-4 justify-evenly   ">
+      <div className=" overflow-hidden ">
+        <ul className="flex gap-4 m-3 justify-evenly ">
           {limitedCars.map((car) => (
             <li key={car.id}>
               <div>
@@ -26,7 +26,7 @@ export function RecommendedCar({ limit }: { limit: number }) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className=" ">
-        <ul className="flex flex-wrap gap-4 justify-evenly  ">
+        <ul className="flex flex-wrap gap-4   justify-evenly  ">
           {limitedCars.map((car) => (
             <li key={car.id}>
               <div>
