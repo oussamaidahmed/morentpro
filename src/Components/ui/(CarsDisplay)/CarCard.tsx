@@ -17,6 +17,7 @@ interface Car {
 
 interface CarCardProps {
   car: Car;
+
 }
 export default function CarCard({ car }: CarCardProps) {
   return (

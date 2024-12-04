@@ -1,7 +1,7 @@
 import { Cars } from "../../../../api/Cars-Data";
 import CarCard from "./CarCard";
 import { Suspense } from "react";
-export  function PopularCar({ limit }: { limit: number }) {
+export function PopularCar({ limit }: { limit: number }) {
   const limitedCars = Cars.slice(0, limit);
 
   return (
@@ -20,7 +20,7 @@ export  function PopularCar({ limit }: { limit: number }) {
     </Suspense>
   );
 }
-export  function RecommendedCar({ limit }: { limit: number }) {
+export function RecommendedCar({ limit }: { limit: number }) {
   const limitedCars = Cars.slice(0, limit);
 
   return (
