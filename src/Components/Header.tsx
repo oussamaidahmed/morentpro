@@ -13,9 +13,9 @@ import MenuButton from "./MenuButton";
 
 export default function Header() {
   return (
-    <div className="flex bg-white max-sm:flex-wrap max-sm:justify-between justify-around items-center p-1 my-2 gap-4 ">
+    <div className="flex  max-sm:flex-wrap max-sm:justify-between justify-around items-center p-1 my-2 gap-4 ">
       {/* Logo */}
-      <div>
+      <div className="flex lg:hidden">
         <MenuButton />
       </div>
       <div>

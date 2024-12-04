@@ -10,7 +10,7 @@ export default function MenuButton() {
     <div>
       {currentPath !== "/Home" && (
         <div className="hover:scale-105 duration-300   ">
-          <label htmlFor="my-drawer-2" className=" drawer-button md:hidden">
+          <label htmlFor="my-drawer-2" className=" drawer-button ">
             <Menu />
           </label>
         </div>
