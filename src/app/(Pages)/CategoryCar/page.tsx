@@ -1,19 +1,32 @@
-import { Cars } from "../../../../api/Cars-Data";
+"use client";
+import Sidebar from "@/Components/Sidebar";
 import CarCard from "../../../Components/ui/(CarsDisplay)/CarCard";
+import useCarFilters from "../../../Components/useCarFilters";
 import { Suspense } from "react";
 
-export default function page({ limit }: { limit: number }) {
-  const limitedCars = Cars.slice(0, limit);
+export default function Page({ limit }: { limit: number }) {
+
+
+  const {
+    filteredCars,
+    priceRange,
+    handleTypeChange,
+    handleCapacityChange,
+    handlePriceChange,
+  } = useCarFilters(limit);
+
+  const carTypes = ["Sport", "SUV", "MPV", "Sedan", "Coupe", "Hatchback"];
+  const capacities = ["2 Person", "4 Person", "6 Person", "8 or More"];
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <div className="drawer lg:drawer-open bg-white ">
+      <div className="drawer lg:drawer-open bg-white mt-10">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
           {/* Page content here */}
 
-          <ul className="flex flex-wrap gap-4 justify-evenly  ">
-            {limitedCars.map((car) => (
+          <ul className="grid grid-cols-3 gap-10 justify-evenly ">
+            {filteredCars.map((car) => (
               <li key={car.id}>
                 <div>
                   <CarCard car={car} />
@@ -28,16 +41,17 @@ export default function page({ limit }: { limit: number }) {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className=" bg-base-200 text-base-content min-h-full w-60 p-4">
+          <div className=" ">
             {/* Sidebar content here */}
-            <li>
-              <input
-                type="checkbox"
-                defaultChecked
-                className="checkbox checkbox-xs"
-              />
-            </li>
-          </ul>
+            <Sidebar
+              carTypes={carTypes}
+              capacities={capacities}
+              priceRange={priceRange}
+              onTypeChange={handleTypeChange}
+              onCapacityChange={handleCapacityChange}
+              onPriceChange={handlePriceChange}
+            />
+          </div>
         </div>
       </div>
     </Suspense>

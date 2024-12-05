@@ -17,11 +17,10 @@ interface Car {
 
 interface CarCardProps {
   car: Car;
-
 }
 export default function CarCard({ car }: CarCardProps) {
   return (
-    <div className=" max-sm:w-[260px] max-sm:h-[320px] h-[360px] w-[304px]   px-4 flex flex-col justify-around p-3 rounded-md ring-1  hover:scale-105 duration-100 hover:shadow-2xl  ">
+    <div className=" max-md:w-[260px] max-md:h-[320px] h-[380px] w-[320px]   px-4 flex flex-col justify-around p-3 rounded-md ring-1  hover:scale-105 duration-100 hover:shadow-2xl  ">
       {/* Name and Like */}
 
       <div className="flex justify-between">
@@ -31,34 +30,36 @@ export default function CarCard({ car }: CarCardProps) {
         </div>
         <Heart size={20} />
       </div>
-      {/* Car Image */}
-      <div className="flex justify-center my-10 hover:scale-125 duration-100  ">
-        <Link href={`/CarDetail/${car.id}`}>
-          <Image src={car.image} alt={car.name} width={200} height={65} />
-        </Link>
-      </div>
-      {/* Price and Description */}
-      <div className="   overflow-hidden ">
-        <ul className="flex justify-between  text-[#90A3BF]  ">
-          <li className="flex gap-1 items-center">
-            <span>
-              <FuelIcon size={20} />
-            </span>
-            <p>{car.liters}</p>
-          </li>
-          <li className="flex gap-1 items-center">
-            <span>
-              <Cog size={20} />
-            </span>
-            <p>{car.mode}</p>
-          </li>
-          <li className="flex gap-1 items-center">
-            <span>
-              <Users size={20} />
-            </span>
-            <p>{car.people}</p>
-          </li>
-        </ul>
+      <div className="">
+        {/* Car Image */}
+        <div className="flex justify-center my-10 hover:scale-125 duration-100  ">
+          <Link href={`/CarDetail/${car.id}`}>
+            <Image src={car.image} alt={car.name} width={200} height={65} />
+          </Link>
+        </div>
+        {/* Price and Description */}
+        <div className="   overflow-hidden ">
+          <ul className="flex justify-between  text-[#90A3BF]  ">
+            <li className="flex gap-1 items-center">
+              <span>
+                <FuelIcon size={20} />
+              </span>
+              <p>{car.liters}</p>
+            </li>
+            <li className="flex gap-1 items-center">
+              <span>
+                <Cog size={20} />
+              </span>
+              <p>{car.mode}</p>
+            </li>
+            <li className="flex gap-1 items-center">
+              <span>
+                <Users size={20} />
+              </span>
+              <p>{car.people}</p>
+            </li>
+          </ul>
+        </div>
       </div>
 
       {/* Rent button and Price */}
