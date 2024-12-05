@@ -1,149 +1,101 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "next/navigation";
-// import Image from "next/image";
 import { Cars } from "../../../../../api/Cars-Data";
 
 export default function CarDetail() {
   const params = useParams();
   const carId = params?.id?.toString();
 
+  // State for filters
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+  const [capacity, setCapacity] = useState<string[]>([]);
+  const [priceRange, setPriceRange] = useState<number>(40);
+
   if (!carId) {
-    return <p>Invalid car ID</p>; // Handle missing `id`
+    return <p>Invalid car ID</p>;
   }
 
   const car = Cars.find((car) => car.id.toString() === carId);
 
   if (!car) {
-    return <p>Car not found</p>; // Handle missing car data
+    return <p>Car not found</p>;
   }
-  return (
-    <div>
-      <div className="drawer lg:drawer-open bg-white ">
-        <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col items-center justify-center">
-          {/* Page content here */}
-        </div>
-        <div className="drawer-side">
-          <label
-            htmlFor="my-drawer-2"
-            aria-label="close sidebar"
-            className="drawer-overlay"
-          ></label>
 
-          <div className=" bg-base-200 text-base-content min-h-full w-60 p-5 pt-10 space-y-3">
-            {/* Sidebar content here */}
-            <div>
-              <ul className="space-y-3">
-                <li>
-                  <span className="font-semibold text-sm text-[#90A3BF]">T Y P E</span>
-                </li>
-                <li className="flex gap-2 items-center">
+  const carTypes = ["Sport", "SUV", "MPV", "Sedan", "Coupe", "Hatchback"];
+  const capacities = ["2 Person", "4 Person", "6 Person", "8 or More"];
+
+  const handleTypeChange = (type: string) => {
+    setSelectedTypes((prev) =>
+      prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type]
+    );
+  };
+
+  const handleCapacityChange = (cap: string) => {
+    setCapacity((prev) =>
+      prev.includes(cap) ? prev.filter((c) => c !== cap) : [...prev, cap]
+    );
+  };
+
+  return (
+    <div className="drawer lg:drawer-open bg-white">
+      <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content flex flex-col items-center justify-center">
+        {/* Page content */}
+        <h1 className="text-2xl font-bold">{car.name}</h1>
+        <p className="text-gray-600">{car.description}</p>
+        <p className="text-lg font-semibold">Price: ${car.price}</p>
+        <p className="text-sm text-gray-500">Type: {car.type}</p>
+        <p className="text-sm text-gray-500">Capacity: {car.people}</p>
+      </div>
+      <div className="drawer-side">
+        <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+        <div className="bg-base-200 text-base-content min-h-full w-60 p-5 pt-10 space-y-5">
+          {/* Sidebar content */}
+          <div>
+            <span className="font-semibold text-sm text-[#90A3BF]">T Y P E</span>
+            <ul className="space-y-3 mt-2">
+              {carTypes.map((type) => (
+                <li key={type} className="flex gap-2 items-center">
                   <input
                     type="checkbox"
-                    defaultChecked
-                    className="checkbox checkbox-xs "
-                  />
-                  <p>Sport</p>
-                </li>
-                <li className="flex gap-2 items-center">
-                  <input
-                    type="checkbox"
-                    defaultChecked
                     className="checkbox checkbox-xs"
+                    checked={selectedTypes.includes(type)}
+                    onChange={() => handleTypeChange(type)}
                   />
-                  <p>SUV</p>
+                  <p>{type}</p>
                 </li>
-                <li className="flex gap-2 items-center">
+              ))}
+            </ul>
+          </div>
+          <div>
+            <span className="font-semibold text-sm text-[#90A3BF]">C A P A C I T Y</span>
+            <ul className="space-y-3 mt-2">
+              {capacities.map((cap) => (
+                <li key={cap} className="flex gap-2 items-center">
                   <input
                     type="checkbox"
-                    defaultChecked
                     className="checkbox checkbox-xs"
+                    checked={capacity.includes(cap)}
+                    onChange={() => handleCapacityChange(cap)}
                   />
-                  <p>MPV</p>
+                  <p>{cap}</p>
                 </li>
-                <li className="flex gap-2 items-center">
-                  <input
-                    type="checkbox"
-                    defaultChecked
-                    className="checkbox checkbox-xs"
-                  />
-                  <p>Sedan</p>
-                </li>
-                <li className="flex gap-2 items-center">
-                  <input
-                    type="checkbox"
-                    defaultChecked
-                    className="checkbox checkbox-xs"
-                  />
-                  <p>Coupe</p>
-                </li>
-                <li className="flex gap-2 items-center">
-                  <input
-                    type="checkbox"
-                    defaultChecked
-                    className="checkbox checkbox-xs"
-                  />
-                  <p>Hatchback</p>
-                </li>
-              </ul>
-            </div>
-            <div>
-            <ul className="space-y-3">
-                <li>
-                  <p>
-                    <span className="font-semibold text-sm text-[#90A3BF]">C A P A C I T Y</span>
-                  </p>
-                </li>
-                <li className="flex gap-2 items-center">
-                  <input
-                    type="checkbox"
-                    defaultChecked
-                    className="checkbox checkbox-xs"
-                  />
-                  <p>2 Person </p>
-                </li>
-                <li className="flex gap-2 items-center">
-                  <input
-                    type="checkbox"
-                    defaultChecked
-                    className="checkbox checkbox-xs"
-                  />
-                  <p>4 Person </p>
-                </li>
-                <li className="flex gap-2 items-center">
-                  <input
-                    type="checkbox"
-                    defaultChecked
-                    className="checkbox checkbox-xs"
-                  />
-                  <p>6 Person </p>
-                </li>
-                <li className="flex gap-2 items-center">
-                  <input
-                    type="checkbox"
-                    defaultChecked
-                    className="checkbox checkbox-xs"
-                  />
-                  <p>8 or More </p>
-                </li>
-              </ul>
-            </div>
-            <div>
-            <ul className="space-y-3">
-                <li>
-                <span className="font-semibold text-sm text-[#90A3BF]">P R I C E</span>
-                </li>
-                <li>
-                  <input
-                    type="range"
-                    min={0}
-                    max="100"
-                    value="40"
-                    className="range range-xs"
-                  />
-                </li>
-              </ul>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <span className="font-semibold text-sm text-[#90A3BF]">P R I C E</span>
+            <div className="mt-2">
+              <input
+                type="range"
+                min={0}
+                max="100"
+                value={priceRange}
+                onChange={(e) => setPriceRange(parseInt(e.target.value, 10))}
+                className="range range-xs"
+              />
+              <p>Selected Price: ${priceRange}</p>
             </div>
           </div>
         </div>
