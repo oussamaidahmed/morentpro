@@ -35,9 +35,9 @@ export default function Header() {
           <Search />
         </span>
         <input
-          className=" outline-none flex-1 mx-2 rounded-md p-1 placeholder:text-zinc-500"
           type="text"
           placeholder="Search something here"
+          className=" border-none flex-1 mx-2 rounded-md p-1 placeholder:text-zinc-500"
         />
         <span>
           <SlidersHorizontal />
