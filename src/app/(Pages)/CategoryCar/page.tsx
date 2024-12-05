@@ -41,7 +41,7 @@ export default function Page({ limit }: { limit: number }) {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <div className=" ">
+          <div >
             {/* Sidebar content here */}
             <Sidebar
               carTypes={carTypes}

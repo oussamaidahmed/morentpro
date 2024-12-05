@@ -18,7 +18,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   onPriceChange,
 }) => {
   return (
-    <div className="  bg-base-200 h-screen w-80 p-5 pt-10 space-y-5">
+    <div className=" bg-base-200 h-screen w-80 p-5 pt-10 space-y-5">
       <div>
         <span className="font-semibold text-sm text-[#90A3BF]">T Y P E</span>
         <ul className="space-y-3 mt-2">
@@ -35,7 +35,9 @@ const Sidebar: React.FC<SidebarProps> = ({
         </ul>
       </div>
       <div>
-        <span className="font-semibold text-sm text-[#90A3BF]">C A P A C I T Y</span>
+        <span className="font-semibold text-sm text-[#90A3BF]">
+          C A P A C I T Y
+        </span>
         <ul className="space-y-3 mt-2">
           {capacities.map((capacity) => (
             <li key={capacity} className="flex gap-2 items-center">
@@ -54,12 +56,12 @@ const Sidebar: React.FC<SidebarProps> = ({
         <div className="mt-2">
           <input
             type="range"
-            step={1}
             min={0}
             max={100}
             value={priceRange}
             onChange={(e) => onPriceChange(parseInt(e.target.value, 10))}
-            className="range range-xs"
+            className="w-full h-2 rounded-lg appearance-none cursor-pointer"
+
           />
           <p>Selected Price: ${priceRange}</p>
         </div>
