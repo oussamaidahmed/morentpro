@@ -59,6 +59,7 @@ export default function PaymentPage() {
         </div>
         <div>
           <div className="flex ">
+            <input type="text"   />
             <input
               type="text"
               className="flex-1 px-4 py-2 border-none bg-[#F6F7F9] rounded-lg placeholder:text-[#90A3BF] "

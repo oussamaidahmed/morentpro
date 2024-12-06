@@ -8,7 +8,7 @@ export function RecommendedCar({ limit }: { limit: number; }) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className=" ">
-        <ul className="flex flex-wrap gap-4   justify-evenly  ">
+        <ul className="grid grid-cols-4 gap-4 ">
           {limitedCars.map((car) => (
             <li key={car.id}>
               <div>
