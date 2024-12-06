@@ -3,7 +3,7 @@ import React from "react";
 import { Cars } from "../../../../../api/Cars-Data";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-import { Star } from "lucide-react";
+import { Rating } from "flowbite-react";
 
 export default function PaymentPage() {
   const params = useParams();
@@ -17,7 +17,7 @@ export default function PaymentPage() {
 
   return (
     <div className=" flex flex-wrap gap-10 order text-wrap">
-      <div className="border-2 rounded-lg w-[492px] h-[560px] gap-5 lg:order-last p-2 " >
+      <div className="border-2 rounded-lg w-[492px] h-[560px] gap-5 lg:order-last p-2 ">
         <div>
           <h1 className=" text-lg  md:font-semibold">Rental Summary</h1>
           <p className="text-[#90A3BF]">
@@ -36,11 +36,13 @@ export default function PaymentPage() {
           <div className=" space-y-1">
             <p className=" font-bold text-3xl">{car.name}</p>
             <div className="flex gap-1">
-              <Star size={20} />
-              <Star size={20} />
-              <Star size={20} />
-              <Star size={20} />
-              <Star size={20} />
+              <Rating>
+                <Rating.Star />
+                <Rating.Star />
+                <Rating.Star />
+                <Rating.Star />
+                <Rating.Star filled={false} />
+              </Rating>
             </div>
             <p className="text-[#90A3BF]">440+ Reviewer</p>
           </div>
@@ -56,14 +58,14 @@ export default function PaymentPage() {
           </div>
         </div>
         <div>
-          <div className="flex rounded-lg bg-[#F6F7F9] w-72 items-center">
+          <div className="flex ">
             <input
               type="text"
-              placeholder="Apply promo code"
-              className="flex-grow p-2  bg-[#F6F7F9] placeholder:text-[#90A3BF] border-none "
+              className="flex-1 px-4 py-2 border-none bg-[#F6F7F9] rounded-lg placeholder:text-[#90A3BF] "
+              placeholder="Enter your website"
             />
-            <button className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600">
-              Apply
+            <button className="bg-blue-500  text-white px-4 py-2">
+              Submit
             </button>
           </div>
         </div>
