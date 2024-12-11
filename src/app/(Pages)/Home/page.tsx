@@ -7,7 +7,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className=" ">
+    <div className=" mx-36">
       <div>
         <AdsCard />
       </div>
@@ -23,7 +23,7 @@ export default function page() {
         </div>
         <PopularCar limit={4} />
       </div>
-      <div className=" pt-10 space-y-10">
+      <div className=" pt-10 space-y-10 ">
         <h1 className="text-lg  text-[#90A3BF]">Recommended Car</h1>
         <RecommendedCar limit={8} />
       </div>

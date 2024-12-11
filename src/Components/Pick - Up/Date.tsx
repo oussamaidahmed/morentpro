@@ -1,43 +1,23 @@
-"use client"
+"use client";
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
-import * as React from "react"
-import { format } from "date-fns"
-import { Calendar as CalendarIcon } from "lucide-react"
-
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
-
-export function DatePickerDemo() {
-  const [date, setDate] = React.useState<Date>()
+const DatePickerComponent = () => {
+  const [selectedDate, setSelectedDate] = useState(null);
 
   return (
-    <Popover>
-      <PopoverTrigger asChild>
-        <Button
-          variant={"outline"}
-          className={cn(
-            "w-[280px] justify-start text-left font-normal",
-            !date && "text-muted-foreground"
-          )}
-        >
-          <CalendarIcon className="mr-2 h-4 w-4" />
-          {date ? format(date, "PPP") : <span>Pick a date</span>}
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-auto p-0">
-        <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-          initialFocus
-        />
-      </PopoverContent>
-    </Popover>
-  )
-}
+    <div>
+      <label className="block font-semibold mb-2">Date</label>
+      <DatePicker
+        selected={selectedDate}
+        onChange={(date) => setSelectedDate(date)}
+        dateFormat="yyyy/MM/dd"
+        placeholderText="Choose a date"
+        className="border border-gray-300 rounded-md w-full py-2 px-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+      />
+    </div>
+  );
+};
+
+export default DatePickerComponent;

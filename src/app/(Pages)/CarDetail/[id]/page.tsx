@@ -67,7 +67,7 @@ export default function CarDetail() {
   };
 
   return (
-    <div className="drawer lg:drawer-open bg-white">
+    <div className="drawer lg:drawer-open bg-white mx-16 gap-5">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
         {/* Main car details */}

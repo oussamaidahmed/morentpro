@@ -7,8 +7,8 @@ export function RecommendedCar({ limit }: { limit: number; }) {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <div className=" ">
-        <ul className="grid grid-cols-4 gap-4 ">
+       <div className=" ">
+       <ul className="grid grid-cols-4  gap-7 m-3 justify-evenly w-full ">
           {limitedCars.map((car) => (
             <li key={car.id}>
               <div>

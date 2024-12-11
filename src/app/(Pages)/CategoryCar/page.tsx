@@ -20,7 +20,7 @@ export default function Page({ limit }: { limit: number }) {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <div className="drawer lg:drawer-open bg-white mt-10">
+      <div className="drawer lg:drawer-open bg-white mt-10 ">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
           {/* Page content here */}
