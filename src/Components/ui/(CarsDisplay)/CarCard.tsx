@@ -68,7 +68,7 @@ export default function CarCard({ car }: CarCardProps) {
           <p className="text-xl font-bold flex items-center gap-1">
             ${car.price}/<span className="text-[#90A3BF] text-sm  ">day</span>
           </p>
-          <Link href={`/PaymentPage/${car.id}`}>
+          <Link prefetch href={`/PaymentPage/${car.id}`}>
             <button
               className="bg-[#3563E9] text-white px-6 py-2 rounded-md"
             >

@@ -16,25 +16,28 @@ export default function PaymentPage() {
   }
 
   return (
-    <div className=" flex flex-wrap gap-10 order text-wrap">
-      <div className="border-2 rounded-lg w-[492px] h-[560px] gap-5 lg:order-last p-2 ">
+    <div className="flex flex-col lg:flex-row gap-10 justify-center">
+      {/* Rental Summary */}
+      <div className="border-2 rounded-lg w-full lg:w-[492px] h-auto p-7 space-y-5">
         <div>
-          <h1 className=" text-lg  md:font-semibold">Rental Summary</h1>
+          <h1 className="text-lg font-semibold">Rental Summary</h1>
           <p className="text-[#90A3BF]">
             Prices may change depending on the length of the rental and the
             price of your rental car.
           </p>
         </div>
-        <div className="flex gap-5 border-b-2 pb-12">
-          <Image
-            src={car.image}
-            alt="Car"
-            width={150}
-            height={65}
-            className=" border-2 "
-          />
-          <div className=" space-y-1">
-            <p className=" font-bold text-3xl">{car.name}</p>
+        <div className="flex gap-5 border-b-2 pb-12 items-center">
+          <div className="w-[270px] h-[180px] border-2 overflow-hidden rounded-lg grid place-items-center">
+            <Image
+              src={car.image}
+              alt="Car"
+              width={270}
+              height={180}
+              className="object-contain"
+            />
+          </div>
+          <div className="space-y-1">
+            <p className="font-bold text-3xl">{car.name}</p>
             <div className="flex gap-1">
               <Rating>
                 <Rating.Star />
@@ -50,72 +53,123 @@ export default function PaymentPage() {
         <div>
           <div className="flex justify-between">
             <p className="text-[#90A3BF] text-lg font-semibold">Subtotal</p>
-            <p className=" font-bold text-lg">${car.price}</p>
+            <p className="font-bold text-lg">${car.price}</p>
           </div>
           <div className="flex justify-between">
             <p className="text-[#90A3BF] text-lg font-semibold">Tax</p>
-            <p className=" font-bold text-lg">$0</p>
+            <p className="font-bold text-lg">$0</p>
           </div>
         </div>
-        <div>
-          <div className="flex ">
-            <input type="text"   />
-            <input
-              type="text"
-              className="flex-1 px-4 py-2 border-none bg-[#F6F7F9] rounded-lg placeholder:text-[#90A3BF] "
-              placeholder="Enter your website"
-            />
-            <button className="bg-blue-500  text-white px-4 py-2">
-              Submit
-            </button>
+        {/* Promo code input */}
+        <div className="relative flex items-center">
+          <input
+            type="text"
+            placeholder="Apply promo code"
+            className="w-full p-3 pr-20 border-none bg-[#F6F7F9] placeholder:text-[#90A3BF] "
+          />
+          <button className="absolute right-7 top-1/2 transform -translate-y-1/2 text-black font-semibold ">
+            Apply now
+          </button>
+        </div>
+        <div className="flex justify-between items-center">
+          <div>
+            <p className="font-bold text-black">Total Rental Price</p>
+            <p className="text-[#90A3BF]">
+              Overall price and includes rental discount
+            </p>
           </div>
+          <span className="font-bold text-black text-2xl">${car.price}</span>
         </div>
       </div>
-      <section className=" ">
-        <form action="action" className=" gap-4">
-          <h1 className=" text-lg font-bold">Billing Info</h1>
+
+      <section className="w-full">
+        {/* Billing Info */}
+        <form className="space-y-7">
+          <h1 className="text-lg font-bold">Billing Info</h1>
           <div className="flex justify-between text-[#90A3BF]">
             <p>Please enter your billing info</p>
             <p>Step 1 of 4</p>
           </div>
-
-          <div className="  md:flex flex-wrap gap-7">
+          <div className="grid md:grid-cols-2 gap-7">
             <div>
-              <div>
-                <label className="  label font-semibold">Name</label>
-                <input
-                  type="text"
-                  placeholder="Your name"
-                  className=" border-none rounded-lg bg-[#F6F7F9]  placeholder:text-[#90A3BF]    "
-                />
-              </div>
-              <div>
-                <label className="  label font-semibold">Phone Number</label>
-                <input
-                  type="text"
-                  placeholder="Phone number"
-                  className=" border-none rounded-lg bg-[#F6F7F9]  placeholder:text-[#90A3BF]    "
-                />
-              </div>
+              <label className="block font-semibold mb-2">Name</label>
+              <input
+                type="text"
+                placeholder="Your name"
+                aria-label="Name"
+                required
+                className="w-full p-3 border rounded-lg bg-[#F6F7F9] placeholder:text-[#90A3BF] border-none"
+              />
             </div>
-
             <div>
-              <div>
-                <label className="  label font-semibold">Address</label>
-                <input
-                  type="text"
-                  placeholder="Address"
-                  className=" border-none rounded-lg bg-[#F6F7F9]  placeholder:text-[#90A3BF]    "
-                />
-              </div>
-              <div>
-                <label className="  label font-semibold">Town / City</label>
-                <input
-                  type="text"
-                  placeholder="Town or city"
-                  className=" border-none rounded-lg bg-[#F6F7F9]  placeholder:text-[#90A3BF]    "
-                />
-              </div>
+              <label className="block font-semibold mb-2">Phone Number</label>
+              <input
+                type="text"
+                placeholder="Phone number"
+                aria-label="Phone Number"
+                required
+                className="w-full p-3 border rounded-lg bg-[#F6F7F9] placeholder:text-[#90A3BF] border-none"
+              />
+            </div>
+            <div>
+              <label className="block font-semibold mb-2">Address</label>
+              <input
+                type="text"
+                placeholder="Address"
+                aria-label="Address"
+                required
+                className="w-full p-3 border rounded-lg bg-[#F6F7F9] placeholder:text-[#90A3BF] border-none"
+              />
+            </div>
+            <div>
+              <label className="block font-semibold mb-2">Town / City</label>
+              <input
+                type="text"
+                placeholder="Town or city"
+                aria-label="Town or City"
+                required
+                className="w-full p-3 border rounded-lg bg-[#F6F7F9] placeholder:text-[#90A3BF] border-none"
+              />
+            </div>
+          </div>
+        </form>
+        {/* Rental Info */}
+        <form action="action">
+          <h1 className="text-lg font-bold">Rental Info</h1>
+          <div className="flex justify-between text-[#90A3BF]">
+            <p>Please select your rental date</p>
+            <p>Step 2 of 4</p>
+          </div>
+          <div>
+            <div>
+              <label className="block font-semibold mb-2">Locations</label>
+              <input
+                type="text"
+                placeholder="Town or city"
+                aria-label="Town or City"
+                required
+                className="w-full p-3 border rounded-lg bg-[#F6F7F9] placeholder:text-[#90A3BF] border-none"
+              />
+            </div>
+            <div>
+              <label className="block font-semibold mb-2">Time</label>
+              <input
+                type="text"
+                placeholder="Town or city"
+                aria-label="Town or City"
+                required
+                className="w-full p-3 border rounded-lg bg-[#F6F7F9] placeholder:text-[#90A3BF] border-none"
+              />
+            </div>
+            <div>
+              <label className="block font-semibold mb-2">Date</label>
+              <input
+                type="text"
+                placeholder="Town or city"
+                aria-label="Town or City"
+                required
+                className="w-full p-3 border rounded-lg bg-[#F6F7F9] placeholder:text-[#90A3BF] border-none"
+              />
             </div>
           </div>
         </form>
