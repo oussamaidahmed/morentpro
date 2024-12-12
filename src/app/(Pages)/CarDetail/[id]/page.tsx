@@ -67,15 +67,13 @@ export default function CarDetail() {
   };
 
   return (
-    <div className="drawer lg:drawer-open bg-white mx-16 gap-5">
+    <div className="drawer lg:drawer-open bg-white lg:mx-16 gap-5">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
         {/* Main car details */}
-        <h1 className="text-2xl font-bold">{car.name}</h1>
-        <p className="text-gray-600">{car.description}</p>
-        <p className="text-lg font-semibold">Price: ${car.price}</p>
-        <p className="text-sm text-gray-500">Type: {car.type}</p>
-        <p className="text-sm text-gray-500">Capacity: {car.people}</p>
+        <div>
+          
+        </div>
 
         {/* Display filtered cars */}
         <div className="mt-8 w-full">

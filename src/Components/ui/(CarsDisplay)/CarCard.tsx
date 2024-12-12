@@ -39,7 +39,7 @@ export default function CarCard({ car }: CarCardProps) {
         </div>
         {/* Price and Description */}
         <div className="   overflow-hidden ">
-          <ul className="flex justify-between  text-[#90A3BF]  ">
+          <ul className=" flex justify-between  text-[#90A3BF] ">
             <li className="flex gap-1 items-center">
               <span>
                 <FuelIcon size={20} />

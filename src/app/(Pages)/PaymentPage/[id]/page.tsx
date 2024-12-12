@@ -24,7 +24,7 @@ export default function PaymentPage() {
   }
 
   return (
-    <div className="flex flex-col lg:flex-row gap-10 justify-center mx-24 mt-14">
+    <div className="flex flex-col lg:flex-row gap-10 justify-center lg:mx-24  mt-14">
       {/* Rental Summary */}
       <div className="border-2 rounded-lg w-full lg:w-[492px] h-fit p-7 space-y-5 lg:order-last ">
         <div>
@@ -41,7 +41,7 @@ export default function PaymentPage() {
               alt="Car"
               width={270}
               height={180}
-              className="object-contain"
+
             />
           </div>
           <div className="space-y-1">

@@ -7,7 +7,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className=" mx-36">
+    <div className=" lg:mx-24">
       <div>
         <AdsCard />
       </div>
