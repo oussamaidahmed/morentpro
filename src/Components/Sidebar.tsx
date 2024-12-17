@@ -18,7 +18,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   onPriceChange,
 }) => {
   return (
-    <div className=" bg-base-200 h-screen w-80 p-5 pt-10 space-y-5">
+    <div className=" bg-base-200 h-screen rounded-lg w-64 p-5  space-y-5">
       <div>
         <span className="font-semibold text-sm text-[#90A3BF]">T Y P E</span>
         <ul className="space-y-3 mt-2">

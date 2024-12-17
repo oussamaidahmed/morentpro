@@ -3,10 +3,9 @@ import Sidebar from "@/Components/Sidebar";
 import CarCard from "../../../Components/ui/(CarsDisplay)/CarCard";
 import useCarFilters from "../../../Components/useCarFilters";
 import { Suspense } from "react";
+import Loading from "@/app/loading";
 
 export default function Page({ limit }: { limit: number }) {
-
-
   const {
     filteredCars,
     priceRange,
@@ -19,39 +18,42 @@ export default function Page({ limit }: { limit: number }) {
   const capacities = ["2 Person", "4 Person", "6 Person", "8 or More"];
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div className="drawer lg:drawer-open bg-white mt-10 ">
+    <Suspense fallback={<Loading />}>
+      <div className="drawer lg:drawer-open bg-white mt-10">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col items-center justify-center">
-          {/* Page content here */}
 
-          <ul className="grid grid-cols-3 gap-10 justify-evenly ">
-            {filteredCars.map((car) => (
-              <li key={car.id}>
-                <div>
+        {/* Main content */}
+        <div className="drawer-content flex flex-col items-center justify-center">
+          <ul className="flex flex-wrap justify-center gap-6">
+            {filteredCars.length > 0 ? (
+              filteredCars.map((car) => (
+                <li key={car.id}>
                   <CarCard car={car} />
-                </div>
-              </li>
-            ))}
+                </li>
+              ))
+            ) : (
+              <div className="text-gray-500 mt-5">
+                No cars match your filters.
+              </div>
+            )}
           </ul>
         </div>
+
+        {/* Sidebar */}
         <div className="drawer-side">
           <label
             htmlFor="my-drawer-2"
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <div >
-            {/* Sidebar content here */}
-            <Sidebar
-              carTypes={carTypes}
-              capacities={capacities}
-              priceRange={priceRange}
-              onTypeChange={handleTypeChange}
-              onCapacityChange={handleCapacityChange}
-              onPriceChange={handlePriceChange}
-            />
-          </div>
+          <Sidebar
+            carTypes={carTypes}
+            capacities={capacities}
+            priceRange={priceRange}
+            onTypeChange={handleTypeChange}
+            onCapacityChange={handleCapacityChange}
+            onPriceChange={handlePriceChange}
+          />
         </div>
       </div>
     </Suspense>
