@@ -7,9 +7,9 @@ import { Rating } from "flowbite-react";
 // import DatePickerComponent from "@/Components/Pick - Up/Date";
 // import TimePickerComponent from "@/Components/Pick - Up/Time";
 
-import visa from "../../../../../public/visa.png";
+import visa from "../../../../../public/Visa.png";
 import Bitcoin from "../../../../../public/Bitcoin.png";
-import paypal from "../../../../../public/paypal.png";
+import paypal from "../../../../../public/Paypal.png";
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 
