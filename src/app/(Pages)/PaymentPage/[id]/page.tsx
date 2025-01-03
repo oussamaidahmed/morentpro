@@ -4,10 +4,9 @@ import { Cars } from "../../../../../api/Cars-Data";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import { Rating } from "flowbite-react";
-import Paypal from "../../../../../public/Paypal.png";
-
 import visa from "../../../../../public/Visa.png";
 import Bitcoin from "../../../../../public/Bitcoin.png";
+import Pay from "../../../../../public/Pay.png";
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 
@@ -236,7 +235,7 @@ export default function PaymentPage() {
                   />
                   <span className="  mr-auto font-semibold">PayPal</span>
                   <span>
-                    <Image src={Paypal} alt="paypal" />
+                    <Image src={Pay} alt="Paypal" />
                   </span>
                 </label>
               </div>
