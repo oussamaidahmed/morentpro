@@ -13,16 +13,16 @@ import MenuButton from "./MenuButton";
 
 export default function Header() {
   return (
-    <div className="flex  max-sm:flex-wrap max-sm:justify-between justify-around items-center p-1 my-2 gap-4 ">
+    <div className="flex   max-sm:flex-wrap  justify-between items-center p-1 my-2 gap-4 ">
       {/* Logo */}
-      <div className="flex lg:hidden">
+      <span className="flex w-6 lg:hidden">
         <MenuButton />
-      </div>
-      <div>
+      </span>
+     <div className="flex  ">
         <Link href="/Home">
-          <p className="tracking-tighter text-2xl font-bold text-[#3563E9]  ">
+          <span className="tracking-tighter text-2xl font-bold text-[#3563E9]  ">
             MORENT
-          </p>
+          </span>
         </Link>
       </div>
 
@@ -57,7 +57,7 @@ export default function Header() {
           <li className="hover:scale-125 hidden lg:flex duration-300 rounded-full  p-1.5  border-2">
             <Settings />
           </li>
-          <li className="flex   hover:scale-125 duration-300  rounded-full p-1.5 border-2 ">
+          <li className="hover:scale-125 duration-300  rounded-full p-1.5 border-2 ">
             <CircleUser />
           </li>
         </ul>
