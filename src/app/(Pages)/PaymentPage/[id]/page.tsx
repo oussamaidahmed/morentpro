@@ -9,7 +9,7 @@ import { Rating } from "flowbite-react";
 
 import visa from "../../../../../public/Visa.png";
 import Bitcoin from "../../../../../public/Bitcoin.png";
-import paypal from "../../../../../public/Paypal.png";
+// import paypal from "../../../../../public/Paypal.png";
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 
@@ -238,7 +238,7 @@ export default function PaymentPage() {
                   />
                   <span className="  mr-auto font-semibold">PayPal</span>
                   <span>
-                    <Image src={paypal} alt="paypal" />
+                    <Image src={""} alt="paypal" />
                   </span>
                 </label>
               </div>

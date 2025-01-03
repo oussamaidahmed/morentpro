@@ -1,9 +1,10 @@
 import AdsCard from "@/Components/ui/(CarsDisplay)/AdsCard";
 import { RecommendedCar } from "@/Components/ui/(CarsDisplay)/RecommendedCar";
 import { PopularCar } from "@/Components/ui/(CarsDisplay)/PopularCar";
-import { Button } from "@nextui-org/react";
+// import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import React from "react";
+import { Button } from "flowbite-react";
 
 export default function page() {
   return (
