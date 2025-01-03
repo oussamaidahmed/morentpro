@@ -5,7 +5,8 @@ import useCarFilters from "../../../Components/useCarFilters";
 import { Suspense } from "react";
 import Loading from "@/app/loading";
 
-export default function Page({ limit }: { limit: number }) {
+export default function Page() {
+  const limit = 10;
   const {
     filteredCars,
     priceRange,
@@ -21,8 +22,6 @@ export default function Page({ limit }: { limit: number }) {
     <Suspense fallback={<Loading />}>
       <div className="drawer lg:drawer-open bg-white mt-10">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-
-        {/* Main content */}
         <div className="drawer-content flex flex-col items-center justify-center">
           <ul className="flex flex-wrap justify-center gap-6">
             {filteredCars.length > 0 ? (
@@ -38,8 +37,6 @@ export default function Page({ limit }: { limit: number }) {
             )}
           </ul>
         </div>
-
-        {/* Sidebar */}
         <div className="drawer-side">
           <label
             htmlFor="my-drawer-2"
