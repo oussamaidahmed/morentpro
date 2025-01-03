@@ -4,8 +4,7 @@ import { Cars } from "../../../../../api/Cars-Data";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import { Rating } from "flowbite-react";
-// import DatePickerComponent from "@/Components/Pick - Up/Date";
-// import TimePickerComponent from "@/Components/Pick - Up/Time";
+import paypal from "../../../../../public/Paypal.png";
 
 import visa from "../../../../../public/Visa.png";
 import Bitcoin from "../../../../../public/Bitcoin.png";
@@ -237,7 +236,7 @@ export default function PaymentPage() {
                   />
                   <span className="  mr-auto font-semibold">PayPal</span>
                   <span>
-                    <Image src={""} alt="paypal" />
+                    <Image src={paypal} alt="paypal" />
                   </span>
                 </label>
               </div>
