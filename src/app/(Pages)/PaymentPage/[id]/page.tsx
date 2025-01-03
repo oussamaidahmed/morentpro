@@ -9,7 +9,6 @@ import { Rating } from "flowbite-react";
 
 import visa from "../../../../../public/Visa.png";
 import Bitcoin from "../../../../../public/Bitcoin.png";
-// import paypal from "../../../../../public/Paypal.png";
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 
