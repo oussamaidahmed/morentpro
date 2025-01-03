@@ -1,4 +1,4 @@
-import AdsCard from "@/Components/ui/(CarsDisplay)/AdsCard";
+// import AdsCard from "@/Components/ui/(CarsDisplay)/AdsCard";
 import { RecommendedCar } from "@/Components/ui/(CarsDisplay)/RecommendedCar";
 import { PopularCar } from "@/Components/ui/(CarsDisplay)/PopularCar";
 import Link from "next/link";
@@ -9,7 +9,7 @@ export default function page() {
   return (
     <div className=" lg:mx-24">
       <div>
-        <AdsCard />
+        {/* <AdsCard /> */}
       </div>
       <div className=" pt-10 space-y-10">
         <div className="flex justify-between ">
